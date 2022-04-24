@@ -1,0 +1,10 @@
+name: get_up
+description: A Simple, Fast, and Easy CLI tool for scaffolding a GetX based application.
+version: 0.0.1
+homepage: https://github.com/Colman1000/get_up.git
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
