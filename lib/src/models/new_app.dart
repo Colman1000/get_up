@@ -1,3 +1,11 @@
+import 'dart:io';
+
+import 'package:get_up/src/commands/create/features/assets.dart';
+import 'package:get_up/src/commands/create/features/intl.dart';
+import 'package:get_up/src/commands/create/features/routes.dart';
+import 'package:get_up/src/commands/create/features/theming.dart';
+import 'package:get_up/src/models/feature_builder.dart';
+
 class NewApp {
   /*
 
@@ -37,7 +45,15 @@ class NewApp {
   String projectName;
   String iosLang;
   String androidLang;
-  String platforms;
+  List<String> platforms;
+  List<FeatureBuilder> features;
+  String workingDir;
+
+  String get sep => Platform.pathSeparator;
+
+  String get projectPath {
+    return '$workingDir$sep$projectName$sep';
+  }
 
   NewApp(
     this.projectName, {
@@ -45,9 +61,24 @@ class NewApp {
     this.org = 'com.example',
     this.iosLang = 'swift',
     this.androidLang = 'kotlin',
-    this.platforms = 'ios,android,windows,linux,macos,web',
+    this.workingDir = './',
+    this.platforms = const [],
+    this.features = const [],
     this.verbose = false,
     this.offline = false,
     this.overwrite = false,
   });
+
+  static List<String> get supportedPlatforms {
+    return <String>['ios', 'android', 'windows', 'linux', 'macos', 'web'];
+  }
+
+  List<FeatureBuilder> get supportedFeatures {
+    return <FeatureBuilder>[
+      AssetFeature(this),
+      IntlFeature(this),
+      RoutesFeature(this),
+      ThemeFeature(this),
+    ];
+  }
 }
