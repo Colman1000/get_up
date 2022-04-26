@@ -4,6 +4,7 @@ import 'package:get_up/src/models/new_app.dart';
 class TestFeature extends FeatureBuilder {
   TestFeature(NewApp app) : super(app);
 
+  @override
   String get name => feature;
 
   static String get feature => 'test';
@@ -20,7 +21,7 @@ class TestFeature extends FeatureBuilder {
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:${appName}/app.dart';
+import 'package:$appName/app.dart';
 
 void main() {
   testWidgets('Write test case', (WidgetTester tester) async {

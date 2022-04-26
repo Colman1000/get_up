@@ -4,6 +4,7 @@ import 'package:get_up/src/models/new_app.dart';
 class AssetFeature extends FeatureBuilder {
   AssetFeature(NewApp app) : super(app);
 
+  @override
   String get name => feature;
 
   static String get feature => 'assets';

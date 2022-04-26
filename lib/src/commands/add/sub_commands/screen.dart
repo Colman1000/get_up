@@ -19,6 +19,6 @@ class ScreenCommand extends Command {
   void run() {
     // [argResults] is set before [run()] is called and contains the flags/options
     // passed to this command.
-    print(argResults?.rest);
+    // debugPrint(argResults?.rest);
   }
 }

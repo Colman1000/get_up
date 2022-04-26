@@ -4,6 +4,7 @@ import 'package:get_up/src/models/new_app.dart';
 class MainFeature extends FeatureBuilder {
   MainFeature(NewApp app) : super(app);
 
+  @override
   String get name => feature;
 
   static String get feature => 'main';
@@ -17,7 +18,7 @@ class MainFeature extends FeatureBuilder {
     f.writeAsStringSync('', flush: true);
     await append(f, '''
 import 'package:flutter/material.dart';
-import 'package:${appName}/app.dart';
+import 'package:$appName/app.dart';
 
 main() {
   runApp(const App());

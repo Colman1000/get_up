@@ -5,6 +5,7 @@ import 'package:get_up/src/models/new_app.dart';
 class IntlFeature extends FeatureBuilder {
   IntlFeature(NewApp app) : super(app);
 
+  @override
   String get name => feature;
 
   static String get feature => 'intl';

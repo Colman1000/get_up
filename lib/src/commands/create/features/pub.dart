@@ -7,6 +7,7 @@ import 'package:yaml_modify/yaml_modify.dart';
 class PubFeature extends FeatureBuilder {
   PubFeature(NewApp app) : super(app);
 
+  @override
   String get name => feature;
 
   static String get feature => 'pub';
